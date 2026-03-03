@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background: #f2f2f2;
+    color: #111;
+}
+
+/* Header */
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 10;
+}
+
+.header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    text-transform: lowercase;
+}
+
+.icons span {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1551024601-bec78aea704b') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background: #c7e14a;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+/* Products */
+
+.products {
+    text-align: center;
+    padding: 80px 60px;
+    background: #e9e9e9;
+}
+
+.products h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .hero {
+        padding-left: 30px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
