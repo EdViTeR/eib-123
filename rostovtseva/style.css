@@ -222,3 +222,102 @@ body {
     font-size: 18px;
     font-weight: 400;
 }
+/* ===== АДАПТИВНЫЕ СТИЛИ ДЛЯ ЭКРАНОВ ДО 640PX ===== */
+@media (max-width: 1024px) {
+    .header {
+        max-width: 1440px;
+		margin: 0 auto;
+		padding: 20px 45px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: white;
+		border-bottom: 1px solid #eee;
+    }
+
+    .header-left {
+        font-size: 32px;
+		font-weight: 700;
+		color: #F1C9A2;
+		flex-shrink: 0;
+    }
+
+    .header-center {
+        gap: 32px;
+    }
+
+    .header-center a {
+        font-size: 14px;
+    }
+
+    .phone-oval {
+        padding: 6px 20px;
+        font-size: 16px;
+    }
+
+    .hero {
+        height: 920px; /* Уменьшаем высоту для мобильных устройств */
+        padding: 24px 10px; /* Уменьшаем отступы */
+    }
+
+    .hero-title {
+        font-size: 24px; /* Уменьшаем размер шрифта */
+        width: 280px; /* Убираем фиксированную ширину */
+        text-align: right; /* Центрируем текст */
+    }
+
+    .hero-description {
+        font-size: 18px; /* Уменьшаем размер шрифта */
+        width: 400px; /* Убираем фиксированную ширину */
+        text-align: left; /* Центрируем текст */
+    }
+
+    .hero-btn-wrapper {
+        width: 100%; /* Убираем фиксированную ширину */
+        justify-content: right; /* Центрируем кнопку */
+    }
+
+    .btn-oval-thick {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .stats-row {
+        flex-direction: row; /* Изменяем направление на колонку */
+        gap: 30px; /* Уменьшаем отступы между карточками */
+        margin-top: 38px; /* Уменьшаем верхний отступ */
+		display: flex;
+		justify-content: center;
+		margin-top: 90px;
+		width: 100%;
+    }
+
+    .stat-card {
+        width: 268px; /* Увеличиваем ширину карточки */
+		height: 180px;
+        margin: 0 auto; /* Центрируем карточку */
+		padding: 43px 20px 30px;
+    }
+
+    .block-logo {
+        height: auto; /* Автоматическая высота для логотипа */
+        padding: 20px; /* Добавляем отступы */
+    }
+
+    .logo-outline {
+        width: 100%; /* Увеличиваем ширину логотипа */
+        font-size: 20px; /* Уменьшаем размер шрифта */
+    }
+
+    .block-partner {
+        height: 400px; /* Уменьшаем высоту для мобильных устройств */
+    }
+
+    .partner-title {
+        font-size: 28px; /* Уменьшаем размер шрифта */
+    }
+
+    .partner-text {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+    }
+}
