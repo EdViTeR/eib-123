@@ -135,11 +135,16 @@ body {
 
 /* Responsive */
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+	.products h2 {
+    font-size: 18px;
+    
+	}
     .hero {
         padding-left: 30px;
         text-align: center;
         justify-content: center;
+		font-size: 12px;
     }
 
     .hero h1 {
@@ -154,4 +159,8 @@ body {
         flex-direction: column;
         align-items: center;
     }
+	.product-card {
+		width: 150px;
+	}
+	
 }
