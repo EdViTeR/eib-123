@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FocusFlow — простой учебный таск-менеджер: планируй задачи и отслеживай прогресс." />
+  <title>FocusFlow — Учебный планер</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Перейти к контенту</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#" aria-label="FocusFlow">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">FocusFlow</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggle-line" aria-hidden="true"></span>
+          <span class="nav__toggle-line" aria-hidden="true"></span>
+          <span class="nav__toggle-line" aria-hidden="true"></span>
+          <span class="sr-only">Открыть меню</span>
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link" href="#features">Возможности</a>
+          <a class="nav__link" href="#how">Как работает</a>
+          <a class="nav__link" href="#demo">Демо</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <button class="btn btn--ghost" type="button" data-theme-toggle>
+          <span class="btn__icon" aria-hidden="true">🌓</span>
+          Тема
+        </button>
+        <a class="btn btn--primary" href="#demo">Попробовать</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="badge">Работает в браузере • Без установки</p>
+          <h1 class="hero__title">Планируй учебу просто. Держи фокус каждый день.</h1>
+          <p class="hero__subtitle">
+            FocusFlow — минималистичный планер: добавляй задачи, отмечай выполненное и сохраняй прогресс прямо в браузере.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#demo">Открыть демо</a>
+            <a class="btn btn--ghost" href="#features">Смотреть возможности</a>
+          </div>
+
+          <div class="hero__stats" role="list">
+            <div class="stat" role="listitem">
+              <div class="stat__value">1</div>
+              <div class="stat__label">страница</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat__value">0</div>
+              <div class="stat__label">зависимостей</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat__value">100%</div>
+              <div class="stat__label">адаптив</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="card preview">
+            <div class="preview__top">
+              <div class="dot dot--red"></div>
+              <div class="dot dot--yellow"></div>
+              <div class="dot dot--green"></div>
+              <div class="preview__title">Сегодня</div>
+            </div>
+            <div class="preview__list">
+              <div class="preview__item">
+                <span class="pill pill--ok">Сделано</span>
+                <span>Конспект по лекции</span>
+              </div>
+              <div class="preview__item">
+                <span class="pill pill--todo">В планах</span>
+                <span>Лабораторная №3</span>
+              </div>
+              <div class="preview__item">
+                <span class="pill pill--todo">В планах</span>
+                <span>Подготовка к зачёту</span>
+              </div>
+            </div>
+            <div class="preview__footer">
+              <div class="progress">
+                <div class="progress__bar" style="width: 34%"></div>
+              </div>
+              <span class="muted">Прогресс: 34%</span>
+            </div>
+          </div>
+          <div class="glow glow--a"></div>
+          <div class="glow glow--b"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Возможности</h2>
+          <p class="section__subtitle">Все, что нужно для учебного мини-сайта: красиво, понятно, без перегруза.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">⚡</div>
+            <h3 class="feature__title">Быстро</h3>
+            <p class="feature__text">Никаких библиотек — только чистый HTML/CSS/JS. Быстро грузится на GitHub Pages.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">📱</div>
+            <h3 class="feature__title">Адаптив</h3>
+            <p class="feature__text">Мобильное меню, гибкая сетка, удобная типографика — смотрится хорошо на любом экране.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">💾</div>
+            <h3 class="feature__title">Сохранение</h3>
+            <p class="feature__text">Демо-задачи сохраняются в LocalStorage — после обновления страницы ничего не теряется.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Как это работает</h2>
+          <p class="section__subtitle">Три простых шага — и учебный план в порядке.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="card step">
+            <span class="step__num">1</span>
+            <div>
+              <h3 class="step__title">Добавь задачи</h3>
+              <p class="step__text">Напиши, что нужно сделать: практика, лекции, лабораторные, дедлайны.</p>
+            </div>
+          </li>
+          <li class="card step">
+            <span class="step__num">2</span>
+            <div>
+              <h3 class="step__title">Отмечай выполнение</h3>
+              <p class="step__text">Клик по задаче — и она становится выполненной. Прогресс обновится автоматически.</p>
+            </div>
+          </li>
+          <li class="card step">
+            <span class="step__num">3</span>
+            <div>
+              <h3 class="step__title">Сохраняй результат</h3>
+              <p class="step__text">Все хранится в браузере. Отлично для демонстрации на паре.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Демо-планер</h2>
+          <p class="section__subtitle">Добавь задачу, кликай, фильтруй. Можно очистить список.</p>
+        </div>
+
+        <div class="card planner">
+          <form class="planner__form" id="taskForm">
+            <label class="field">
+              <span class="field__label">Новая задача</span>
+              <input class="input" id="taskInput" type="text" maxlength="80" placeholder="Например: сделать отчёт по практике" required />
+            </label>
+
+            <button class="btn btn--primary" type="submit">Добавить</button>
+          </form>
+
+          <div class="planner__toolbar">
+            <div class="segmented" role="tablist" aria-label="Фильтр задач">
+              <button class="segmented__btn is-active" type="button" data-filter="all">Все</button>
+              <button class="segmented__btn" type="button" data-filter="active">Активные</button>
+              <button class="segmented__btn" type="button" data-filter="done">Выполненные</button>
+            </div>
+
+            <button class="btn btn--ghost" type="button" id="clearDone">Очистить выполненные</button>
+          </div>
+
+          <ul class="tasks" id="taskList" aria-live="polite"></ul>
+
+          <div class="planner__footer">
+            <div class="progress" aria-label="Прогресс выполнения">
+              <div class="progress__bar" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div class="planner__meta">
+              <span class="muted" id="taskMeta">0 задач</span>
+              <button class="link" type="button" id="resetAll">Сбросить всё</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="muted">© <span id="year"></span> FocusFlow.</p>
+      <a class="muted footer__link" href="#main">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <!-- Всегда видимая кнопка наверх -->
+  <button class="to-top" type="button" data-to-top aria-label="Наверх">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
