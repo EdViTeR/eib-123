@@ -151,3 +151,106 @@ body {
     background: transparent;
     cursor: pointer;
 }
+
+/* ====== Планшеты (до 1024px) ====== */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+/* ====== Маленькие планшеты / большие телефоны ====== */
+@media (max-width: 768px) {
+    .header-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .phone {
+        margin-top: 5px;
+    }
+
+    .hero {
+        height: 300px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .promo {
+        font-size: 13px;
+    }
+
+    .promo span {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+/* ====== Телефоны ====== */
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+    .team {
+        padding: 40px 0;
+    }
+
+    .team h2 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .more-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
