@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Manrope', Arial, sans-serif;
+    background-color: #F9F2EC;
+    color: #3D3545;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a, button, .btn-catalog, .subscribe-form button {
+    text-decoration: none !important;
+}
+
+/* MOBILE MENU */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 280px;
+    height: 100%;
+    background-color: #B6A2C4;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 70px 24px 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+}
+
+.mobile-menu-overlay.open {
+    left: 0;
+}
+
+.menu-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-close-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #F9F2EC;
+    margin: 5px 0;
+}
+
+.menu-close-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-close-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-close-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.mobile-menu-list li {
+    margin-bottom: 28px;
+}
+
+.mobile-menu-list a {
+    font-size: 24px;
+    font-weight: 500;
+    color: #F9F2EC;
+    font-family: 'Manrope', sans-serif;
+    text-decoration: none;
+}
+
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.burger-icon span {
+    height: 2px;
+    background-color: #3D3545;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #F9F2EC;
+}
+
+.logo img {
+    height: 28px;
+    width: auto;
+}
+
+.right-icons {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.right-icons svg {
+    width: 22px;
+    height: 22px;
+    stroke: #3D3545;
+    fill: none;
+}
+
+/* HERO */
+.hero {
+    background-image: url('https://static.tildacdn.info/tild3865-3262-4032-a439-633536666164/Frame_222.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px 60px 20px;
+}
+
+.hero-text {
+    text-align: right;
+    padding-right: 12px;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.1;
+    color: #3D3545;
+    text-align: right;
+    margin-bottom: 16px;
+}
+
+.hero-text h1 .italic-mineral {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.btn-catalog {
+    background-color: #62689E;
+    border-radius: 10px;
+    padding: 12px 24px;
+    display: inline-block;
+    color: #F9F2EC;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    text-align: center;
+    float: right;
+    clear: both;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* MARQUEE */
+.marquee-banner {
+    background-color: #F1BADA;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 22s linear infinite;
+    padding-left: 100%;
+}
+
+.marquee-content span {
+    margin-right: 36px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* CRYSTALS */
+.crystals-block {
+    background: #F9F2EC;
+    padding: 30px 16px 24px;
+}
+
+.crystals-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #3D3545;
+    margin-bottom: 8px;
+}
+
+.collection-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #3D3545;
+    margin-bottom: 20px;
+}
+
+.crystals-img {
+    margin: 15px 0 20px;
+}
+
+.crystals-img img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.crystals-quote {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3D3545;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+/* SLIDER */
+.slider-section {
+    background: #F9F2EC;
+    padding: 10px 0 30px 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 16px;
+    scrollbar-width: thin;
+}
+
+.slider-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+    background: transparent;
+    border-radius: 20px;
+}
+
+.slider-card img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+.section-title-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 0 16px 8px;
+    background: #F9F2EC;
+    color: #3D3545;
+}
+
+/* ПРОЦЕСС ЗАКАЗА */
+.process-section {
+    background: #F9F2EC;
+    padding: 30px 16px 50px;
+}
+
+.process-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: #62689E;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.step-card {
+    background: rgba(165, 145, 186, 0.15);
+    border-radius: 24px;
+    padding: 20px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    position: relative;
+}
+
+.step-card:nth-child(odd) {
+    background: rgba(241, 186, 218, 0.2);
+}
+
+.step-card:nth-child(even) {
+    background: rgba(165, 145, 186, 0.15);
+}
+
+.step-number-circle {
+    width: 52px;
+    height: 52px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #B6A2C4;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.step-text-content {
+    flex: 1;
+}
+
+.step-text-content .step-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #3D3545;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.step-text-content .step-desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5e5a6b;
+    line-height: 1.45;
+}
+
+/* ABOUT */
+.about-block {
+    background: #EDECEB;
+    border-radius: 40px;
+    margin: 16px;
+    overflow: hidden;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+}
+
+.about-text {
+    padding: 24px 22px;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #3D3545;
+}
+
+.about-text p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #3D3545;
+}
+
+.about-logo {
+    margin-top: 24px;
+    max-width: 140px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #C5C6C7;
+    padding: 30px 20px 40px;
+    margin-top: 20px;
+}
+
+.footer-col {
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #3D3545;
+}
+
+.footer-col a {
+    font-family: 'Manrope', sans-serif;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #3D3545;
+    text-decoration: none;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.subscribe-form button {
+    background: #62689E;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+hr {
+    margin: 20px 0;
+    border-color: #aaa;
+}
+
+.copyright {
+    font-size: 11px;
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Manrope', sans-serif;
+}
