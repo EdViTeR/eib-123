@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Шишки-вонючки — хвойные ароматизаторы из древесины для дома и автомобиля.">
+  <title>Шишки-вонючки</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="cone-icon" viewBox="0 0 84 108">
+      <g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M42 9c14 11 23 25 23 40 0 27-23 50-23 50S19 76 19 49c0-15 9-29 23-40Z"></path>
+        <path d="M31 23c4 4 11 7 11 7s7-3 11-7"></path>
+        <path d="M25 35c5 5 11 7 17 7s12-2 17-7"></path>
+        <path d="M22 49c5 4 12 7 20 7s15-3 20-7"></path>
+        <path d="M23 63c4 4 11 7 19 7s15-3 19-7"></path>
+        <path d="M27 77c4 3 9 5 15 5s11-2 15-5"></path>
+        <path d="M42 11v86"></path>
+      </g>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-row">
+      <a class="brand" href="#top" aria-label="Шишки-вонючки">
+        <svg class="brand__icon" viewBox="0 0 84 108">
+          <use href="#cone-icon"></use>
+        </svg>
+        <span class="brand__name">Шишки-вонючки</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Открыть меню</span>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <a href="#about">О нас</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#contact">Обратная связь</a>
+        <a href="#detail">Детальная страница</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Изделия из древесины</p>
+          <h1>Свежий хвойный аромат для дома, машины и рабочего стола</h1>
+          <p class="lead">
+            «Шишки-вонючки» — натуральный ароматизатор из древесины и хвойных масел. Он убирает тяжёлые запахи,
+            наполняет помещение лесной свежестью и безопасен для повседневного использования.
+          </p>
+
+          <div class="hero-actions">
+            <button class="button button--dark" type="button" data-order-product="classic">Заказать</button>
+            <a class="button button--ghost" href="#catalog">Смотреть каталог</a>
+          </div>
+
+          <ul class="hero-features" aria-label="Преимущества">
+            <li>Натуральная древесина и хвойные масла</li>
+            <li>Подходит для дома и автомобиля</li>
+            <li>Ручная сборка и лаконичный дизайн</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="title-panel">
+            <p class="title-panel__top">ШИШКИ</p>
+            <p class="title-panel__bottom">ВОНЮЧКИ</p>
+            <svg class="hero-cone" viewBox="0 0 84 108" aria-hidden="true">
+              <use href="#cone-icon"></use>
+            </svg>
+            <p class="title-note">Хвойная свежесть, которая работает без лишней химии.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--about" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="section-label">О нас</p>
+          <h2>Делаем ароматизаторы, которые пахнут лесом, а не освежителем воздуха</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            Мы берём обработанные деревянные заготовки, пропитываем их натуральными композициями на основе хвои,
+            кедра и смолы, а затем собираем готовые изделия вручную.
+          </p>
+          <p>
+            Получается простой и узнаваемый аксессуар: выглядит как декоративная шишка, работает как мягкий
+            ароматизатор и хорошо вписывается в интерьер.
+          </p>
+        </div>
+      </div>
+
+      <div class="container value-grid">
+        <article class="value-card">
+          <h3>Натуральный состав</h3>
+          <p>Без едких аэрозолей и резких синтетических отдушек. Аромат раскрывается спокойно и постепенно.</p>
+        </article>
+        <article class="value-card">
+          <h3>Форма и функция</h3>
+          <p>Шишка остаётся декоративной деталью интерьера, при этом помогает убрать бытовые запахи.</p>
+        </article>
+        <article class="value-card">
+          <h3>Подарочный формат</h3>
+          <p>Подходит как необычный сувенир, небольшой комплимент коллегам или подарок для автомобилиста.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container section-head">
+        <div>
+          <p class="section-label">Каталог</p>
+          <h2>Три базовые версии под разные сценарии</h2>
+        </div>
+        <p class="section-text">Нажми на карточку, чтобы обновить детальное описание и сразу подставить товар в форму заказа.</p>
+      </div>
+
+      <div class="container catalog-grid">
+        <article class="product-card is-active" data-product-card="classic">
+          <p class="product-card__meta">Базовая серия</p>
+          <h3>Лесная классика</h3>
+          <p>Хвойный аромат с мягкими смолистыми нотами. Лучший вариант для спальни, прихожей и кабинета.</p>
+          <div class="product-card__footer">
+            <span>590 ₽</span>
+            <button class="button button--small" type="button" data-select-product="classic">Выбрать</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card="car">
+          <p class="product-card__meta">Автоформат</p>
+          <h3>Северный салон</h3>
+          <p>Более концентрированный хвойный профиль для автомобиля. Помогает перебить табак, еду и сырость.</p>
+          <div class="product-card__footer">
+            <span>690 ₽</span>
+            <button class="button button--small" type="button" data-select-product="car">Выбрать</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card="gift">
+          <p class="product-card__meta">Подарочный набор</p>
+          <h3>Таёжный подарок</h3>
+          <p>Комплект из двух шишек и мини-открытки. Для тех, кто хочет оформить заказ в подарочном стиле.</p>
+          <div class="product-card__footer">
+            <span>990 ₽</span>
+            <button class="button button--small" type="button" data-select-product="gift">Выбрать</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--detail" id="detail">
+      <div class="container detail-grid">
+        <div class="detail-card">
+          <p class="section-label">Детальная страница</p>
+          <h2 id="detailTitle">Лесная классика</h2>
+          <p class="detail-price" id="detailPrice">590 ₽</p>
+          <p id="detailText">
+            Компактная шишка из древесины с мягким хвойным ароматом. Хорошо работает в небольших комнатах,
+            на рабочем месте и возле входной зоны.
+          </p>
+
+          <dl class="detail-list">
+            <div>
+              <dt>Аромат</dt>
+              <dd id="detailScent">Ель, смола, сухая древесина</dd>
+            </div>
+            <div>
+              <dt>Срок действия</dt>
+              <dd id="detailLifetime">До 30 дней</dd>
+            </div>
+            <div>
+              <dt>Формат</dt>
+              <dd id="detailFormat">Дом и рабочее пространство</dd>
+            </div>
+          </dl>
+
+          <button class="button button--dark" type="button" data-order-product="classic">Оформить заказ</button>
+        </div>
+
+        <aside class="detail-aside">
+          <div class="detail-visual">
+            <svg class="detail-cone" viewBox="0 0 84 108" aria-hidden="true">
+              <use href="#cone-icon"></use>
+            </svg>
+          </div>
+          <div class="detail-note">
+            <h3>Как использовать</h3>
+            <ol>
+              <li>Распакуйте шишку и оставьте её на открытом воздухе на 5 минут.</li>
+              <li>Поставьте в сухое место: на полку, консоль, держатель или подстаканник.</li>
+              <li>Если аромат станет слабее, слегка встряхните изделие или капните масло из набора.</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-label">Обратная связь</p>
+          <h2>Оставь заявку, и мы свяжемся с тобой для подтверждения заказа</h2>
+          <p class="section-text">
+            Это учебный макет, поэтому форма ничего не отправляет на сервер. JavaScript покажет сообщение об успешной заявке.
+          </p>
+        </div>
+
+        <form class="contact-form" id="orderForm">
+          <label>
+            Имя
+            <input type="text" name="name" placeholder="Например, Максим" required>
+          </label>
+
+          <label>
+            Телефон
+            <input type="tel" name="phone" placeholder="+7 (900) 000-00-00" required>
+          </label>
+
+          <label>
+            Товар
+            <select name="product" id="productChoice">
+              <option value="classic">Лесная классика</option>
+              <option value="car">Северный салон</option>
+              <option value="gift">Таёжный подарок</option>
+            </select>
+          </label>
+
+          <label>
+            Комментарий
+            <textarea name="comment" rows="4" placeholder="Куда нужен ароматизатор: домой, в машину или в подарок?"></textarea>
+          </label>
+
+          <button class="button button--dark button--wide" type="submit">Отправить заявку</button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>Шишки-вонючки</p>
+      <a href="#top">Наверх</a>
+    </div>
+  </footer>
+</body>
+</html>
