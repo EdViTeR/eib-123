@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<<<<<<< HEAD
+<html>
+<head>
+	<title>Сайт группы ЭИБ-123</title>
+</head>
+<body>
+	<h1>Привет!</h1>
+	<a href="pivnenko/pivnenko.html">Пивненко Максим</a>
+=======
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Онлайн-репетитор по китайскому языку</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #f5f3f4;
+      color: #3b3b3f;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: 1320px;
+      max-width: calc(100% - 60px);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: -0.5px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .menu {
+      margin-left: auto;
+      font-size: 18px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 860px;
+      padding-top: 30px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f6a4c9;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      line-height: 1;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      line-height: 0.96;
+      font-weight: 800;
+      letter-spacing: -3px;
+      max-width: 780px;
+      margin: 0 auto 28px;
+      color: #3b3b3f;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: #636368;
+      margin-bottom: 36px;
+    }
+
+    .main-photo {
+      width: 330px;
+      height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0 auto 42px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f89ac7;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 18px 34px;
+      border-radius: 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #f486bc;
+    }
+
+    .side-photo {
+      position: absolute;
+      z-index: 2;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      background: #ddd;
+    }
+
+    .side-photo.left {
+      width: 155px;
+      height: 235px;
+      left: 0;
+      top: 535px;
+    }
+
+    .side-photo.right {
+      width: 152px;
+      height: 230px;
+      right: 0;
+      top: 52px;
+    }
+
+    .photo-caption {
+      position: absolute;
+      right: -3px;
+      top: 292px;
+      width: 165px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #4a4a4f;
+      z-index: 2;
+    }
+
+    .decor-branch {
+      position: absolute;
+      left: -60px;
+      top: 120px;
+      font-size: 170px;
+      color: rgba(240, 166, 197, 0.25);
+      z-index: 1;
+      transform: rotate(-8deg);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .decor-pagoda {
+      position: absolute;
+      right: 70px;
+      top: 320px;
+      font-size: 360px;
+      color: rgba(240, 166, 197, 0.13);
+      z-index: 1;
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .help-section {
+      padding: 40px 0 70px;
+    }
+
+    .help-title {
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1.8px;
+      margin-bottom: 38px;
+      color: #3b3b3f;
+      text-transform: lowercase;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .card {
+      background: #f4e7ec;
+      border: 1.5px solid #5b5456;
+      border-radius: 14px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 20px;
+      align-items: start;
+      min-height: 305px;
+    }
+
+    .card-img {
+      width: 190px;
+      height: 255px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: #4a4a4f;
+      margin-bottom: 28px;
+    }
+
+    .card p {
+      font-size: 17px;
+      line-height: 1.45;
+      color: #5d5c62;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 1200px) {
+      .hero h1 {
+        font-size: 58px;
+        max-width: 680px;
+      }
+
+      .decor-pagoda {
+        right: 10px;
+        font-size: 290px;
+      }
+
+      .side-photo.left {
+        top: 590px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .logo {
+        position: static;
+        transform: none;
+      }
+
+      .header {
+        justify-content: space-between;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+        letter-spacing: -1.5px;
+      }
+
+      .side-photo,
+      .photo-caption,
+      .decor-branch,
+      .decor-pagoda {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        max-width: calc(100% - 32px);
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .badge {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .main-photo {
+        width: 100%;
+        max-width: 320px;
+        height: 360px;
+      }
+
+      .help-title {
+        font-size: 34px;
+      }
+
+      .card {
+        grid-template-columns: 1fr;
+      }
+
+      .card-img {
+        width: 100%;
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div></div>
+      <div class="logo">rosinskaya</div>
+      <a href="#" class="menu">меню</a>
+    </header>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="decor-branch">❀</div>
+      <div class="decor-pagoda">⛩</div>
+
+      <div class="side-photo right">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Фото преподавателя">
+      </div>
+      <div class="photo-caption">Валерия Демидова</div>
+
+      <div class="side-photo left">
+        <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=500&q=80" alt="Фото с Китаем">
+      </div>
+
+      <div class="hero-content">
+        <div class="badge">HSK 5 • 2 года преподавания</div>
+        <h1>онлайн-репетитор<br>по китайскому языку</h1>
+        <p class="hero-subtitle">
+          Помогаю разобраться в языке и выстроить обучение без лишней сложности
+        </p>
+
+        <div class="main-photo">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Главное фото">
+        </div>
+
+        <a href="#" class="btn">Узнать подробнее о занятиях</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section">
+    <div class="container">
+      <h2 class="help-title">кому я могу помочь?</h2>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80" alt="Китайская архитектура">
+          </div>
+          <div class="card-content">
+            <h3>Школьникам, которые изучают китайский в школе</h3>
+            <p>
+              Если китайский язык есть в школьной программе, но материал даётся тяжело,
+              появляются пробелы или теряется интерес.
+            </p>
+            <p>
+              На занятиях последовательно разбираем школьные темы и закрепляем материал
+              до уверенного понимания.
+            </p>
+            <p>
+              Родители остаются в курсе процесса обучения и видят прогресс ребёнка.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=700&q=80" alt="Китайский город">
+          </div>
+          <div class="card-content">
+            <h3>Тем, кто изучает китайский для себя</h3>
+            <p>
+              Если вы изучаете китайский как дополнительный навык или просто для себя.
+            </p>
+            <p>
+              Помогаю выстроить структуру обучения, разобраться в базовых принципах языка
+              и видеть результат от занятий.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+>>>>>>> 89edc9d (first commit)
+</body>
+</html>
