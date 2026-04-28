@@ -222,28 +222,18 @@ body {
     font-size: 18px;
     font-weight: 400;
 }
-/* ===== АДАПТИВНЫЕ СТИЛИ ДЛЯ ЭКРАНОВ ДО 640PX ===== */
-@media (max-width: 1024px) {
-    .header {
-        max-width: 1440px;
-		margin: 0 auto;
-		padding: 20px 45px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		background: white;
-		border-bottom: 1px solid #eee;
-    }
+/* ===== АДАПТИВ ===== */
 
-    .header-left {
-        font-size: 32px;
-		font-weight: 700;
-		color: #F1C9A2;
-		flex-shrink: 0;
+/* 📲 ПЛАНШЕТЫ */
+@media (max-width: 1024px) {
+
+    .header {
+        padding: 20px;
     }
 
     .header-center {
-        gap: 32px;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     .header-center a {
@@ -251,73 +241,146 @@ body {
     }
 
     .phone-oval {
-        padding: 6px 20px;
         font-size: 16px;
+        padding: 6px 20px;
     }
 
+    /* HERO */
     .hero {
-        height: 920px; /* Уменьшаем высоту для мобильных устройств */
-        padding: 24px 10px; /* Уменьшаем отступы */
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .hero-row {
+        gap: 30px;
     }
 
     .hero-title {
-        font-size: 24px; /* Уменьшаем размер шрифта */
-        width: 280px; /* Убираем фиксированную ширину */
-        text-align: right; /* Центрируем текст */
+        font-size: 32px;
+        width: 400px;
     }
 
     .hero-description {
-        font-size: 18px; /* Уменьшаем размер шрифта */
-        width: 400px; /* Убираем фиксированную ширину */
-        text-align: left; /* Центрируем текст */
+        width: 350px;
+        font-size: 16px;
+    }
+
+    .hero-divider-vertical {
+        height: 80px;
     }
 
     .hero-btn-wrapper {
-        width: 100%; /* Убираем фиксированную ширину */
-        justify-content: right; /* Центрируем кнопку */
+        width: 100%;
+        justify-content: flex-end;
     }
 
-    .btn-oval-thick {
-        padding: 10px 20px;
-        font-size: 18px;
-    }
-
+    /* STATS */
     .stats-row {
-        flex-direction: row; /* Изменяем направление на колонку */
-        gap: 30px; /* Уменьшаем отступы между карточками */
-        margin-top: 38px; /* Уменьшаем верхний отступ */
-		display: flex;
-		justify-content: center;
-		margin-top: 90px;
-		width: 100%;
+        gap: 40px;
+        margin-top: 80px;
     }
 
     .stat-card {
-        width: 268px; /* Увеличиваем ширину карточки */
-		height: 180px;
-        margin: 0 auto; /* Центрируем карточку */
-		padding: 43px 20px 30px;
+        width: 220px;
+        padding: 30px 15px;
     }
 
-    .block-logo {
-        height: auto; /* Автоматическая высота для логотипа */
-        padding: 20px; /* Добавляем отступы */
-    }
-
-    .logo-outline {
-        width: 100%; /* Увеличиваем ширину логотипа */
-        font-size: 20px; /* Уменьшаем размер шрифта */
-    }
-
-    .block-partner {
-        height: 400px; /* Уменьшаем высоту для мобильных устройств */
+    /* PARTNER */
+    .partner-overlay {
+        width: 90%;
     }
 
     .partner-title {
-        font-size: 28px; /* Уменьшаем размер шрифта */
+        font-size: 32px;
+    }
+}
+
+
+/* 📱 МОБИЛКИ */
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-center {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .phone-oval {
+        font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hero-title {
+        width: 100%;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .hero-divider-vertical {
+        display: none;
+    }
+
+    .hero-description {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .hero-btn-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* STATS */
+    .stats-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .stat-card {
+        width: 90%;
+    }
+
+    /* LOGO */
+    .logo-outline {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* PARTNER */
+    .block-partner {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .partner-title {
+        font-size: 24px;
     }
 
     .partner-text {
-        font-size: 16px; /* Уменьшаем размер шрифта */
+        font-size: 14px;
     }
 }
