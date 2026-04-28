@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #1f1f1f;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+.header {
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #1f1f1f;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: #6d0f14;
+}
+
+/* TITLE */
+.hero {
+    text-align: center;
+    margin: 60px 0 40px;
+    padding: 0 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #6d0f14;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* CONTENT WRAPPER */
+.content {
+    width: 1100px;
+    margin: auto;
+}
+
+/* SECTIONS */
+.top,
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 90px;
+}
+
+/* TEXT */
+.text-left,
+.text-right {
+    width: 50%;
+    font-size: 22px;
+    color: #2b2b2b;
+}
+
+.text-right ul {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.text-right li {
+    margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.text-right li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #6d0f14;
+}
+
+/* IMAGES */
+.image-right,
+.image-left {
+    width: 50%;
+}
+
+.image-right img,
+.image-left img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.image-right img:hover,
+.image-left img:hover {
+    transform: scale(1.02);
+}
+
+/* =========================
+   💻 TABLET (1024px и меньше)
+   ========================= */
+@media (max-width: 1024px) {
+    .content {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .top,
+    .bottom {
+        gap: 40px;
+    }
+
+    .text-left,
+    .text-right {
+        font-size: 20px;
+    }
+}
+
+/* =========================
+   📱 SMALL TABLET / LARGE PHONE (768px и меньше)
+   ========================= */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .top,
+    .bottom {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .text-left,
+    .text-right,
+    .image-left,
+    .image-right {
+        width: 100%;
+    }
+
+    .text-left,
+    .text-right {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .text-right ul {
+        padding-left: 0;
+    }
+}
+
+/* =========================
+   📱 PHONE (480px и меньше)
+   ========================= */
+@media (max-width: 480px) {
+
+    .header nav {
+        gap: 12px;
+    }
+
+    .header nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        margin: 40px 0 25px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .text-left,
+    .text-right {
+        font-size: 16px;
+    }
+
+    .top,
+    .bottom {
+        gap: 20px;
+    }
+
+    .image-right img,
+    .image-left img {
+        border-radius: 12px;
+    }
+}
