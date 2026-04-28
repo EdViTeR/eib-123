@@ -211,3 +211,198 @@ nav a{
     background:#123b2f;
     border:2px solid #38e0c5;
 }
+/* =========================
+   1400px
+   ========================= */
+
+@media (max-width: 1400px){
+
+.hero-container{
+    padding:60px;
+}
+
+.hero-right h1{
+    font-size:60px;
+}
+
+.hero-left img{
+    width:360px;
+    height:360px;
+}
+
+}
+
+
+/* =========================
+   1200px
+   ========================= */
+
+@media (max-width: 1200px){
+
+header{
+    padding:20px;
+}
+
+.hero-container{
+    margin:30px 20px 0;
+    padding:50px;
+}
+
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.features-wrapper{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* =========================
+   992px (tablet)
+   ========================= */
+
+@media (max-width: 992px){
+
+nav{
+    gap:20px;
+}
+
+.hero-container{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+}
+
+.hero-left img{
+    width:300px;
+    height:300px;
+}
+
+.hero-right{
+    max-width:100%;
+}
+
+.hero-right h1{
+    font-size:48px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.features-wrapper{
+    grid-template-columns:1fr;
+}
+
+}
+
+
+/* =========================
+   768px (small tablet)
+   ========================= */
+
+@media (max-width: 768px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-container{
+    padding:40px 25px;
+}
+
+.hero-right h1{
+    font-size:40px;
+}
+
+.hero-right p{
+    font-size:15px;
+}
+
+.pricing h2{
+    font-size:26px;
+}
+
+}
+
+
+/* =========================
+   480px (mobile)
+   ========================= */
+
+@media (max-width: 480px){
+
+body{
+    padding-bottom:120px;
+}
+
+.logo{
+    font-size:18px;
+}
+
+.hero-container{
+    border-radius:25px;
+    padding:30px 20px;
+}
+
+.hero-left img{
+    width:220px;
+    height:220px;
+}
+
+.hero-right h1{
+    font-size:32px;
+}
+
+.hero-right p{
+    font-size:14px;
+}
+
+.tag{
+    font-size:12px;
+    padding:8px 14px;
+}
+
+.card{
+    padding:25px;
+}
+
+.price{
+    font-size:18px;
+}
+
+}
+
+
+/* =========================
+   320px (small phones)
+   ========================= */
+
+@media (max-width: 320px){
+
+.hero-right h1{
+    font-size:26px;
+}
+
+.hero-left img{
+    width:180px;
+    height:180px;
+}
+
+nav{
+    gap:12px;
+}
+
+nav a{
+    font-size:13px;
+}
+
+}
