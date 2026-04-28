@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GhostLink VPN — лучший бесплатный VPN для безграничного доступа к Интернету из любой точки мира. Быстро, просто и абсолютно бесплатно.">
+    <title>GhostLink VPN — Лучший бесплатный VPN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ======= Шапка ======= -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-logo">GHOSTLINK VPN</div>
+        <ul class="navbar-links">
+            <li><a href="#hero">Главная</a></li>
+            <li><a href="#info">Серверы</a></li>
+            <li><a href="#info">О нас</a></li>
+            <li><a href="#footer">Контакты</a></li>
+        </ul>
+        <button class="navbar-cta" id="nav-install-btn">Установить VPN</button>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- ======= Главный экран ======= -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <img src="Back.jpg" alt="Background tropical leaves">
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>
+                    <span class="green">Ghost</span>Link - лучший бесплатный VPN
+                </h1>
+
+                <ul class="features-list">
+                    <li>
+                        <img src="Galochka.png" alt="✓">
+                        Подключайтесь в один клик
+                    </li>
+                    <li>
+                        <img src="Galochka.png" alt="✓">
+                        Максимальная скорость соединения
+                    </li>
+                    <li>
+                        <img src="Galochka.png" alt="✓">
+                        Сохранить анонимность при работе в Интернете
+                    </li>
+                    <li>
+                        <img src="Galochka.png" alt="✓">
+                        Мы поддерживаем ваш любимый браузер
+                    </li>
+                    <li>
+                        <img src="Galochka.png" alt="✓">
+                        Всегда стабильные сервера
+                    </li>
+                </ul>
+
+                <button class="hero-btn" id="install-btn">УСТАНОВИТЬ VPN</button>
+            </div>
+
+            <div class="hero-image fade-in">
+                <img src="ImageRight.png" alt="GhostLink VPN Interface">
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Браузеры ======= -->
+    <div class="browsers-wrapper fade-in" id="browsers">
+        <div class="browsers-bar">
+            <h3>Доступно для</h3>
+            <div class="browsers-list">
+                <div class="browser-item">
+                    <img src="EdgeLogo.png" alt="Microsoft Edge">
+                    <span>Microsoft Edge</span>
+                </div>
+                <div class="browser-item">
+                    <img src="ChromeEdge.png" alt="Google Chrome">
+                    <span>Google Chrome</span>
+                </div>
+                <div class="browser-item">
+                    <img src="OperaLogo.png" alt="Opera">
+                    <span>Opera</span>
+                </div>
+                <div class="browser-item">
+                    <img src="YandexLogo.png" alt="Yandex Browser">
+                    <span>Yandex</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Информация ======= -->
+    <section class="info-section" id="info">
+        <h2 class="fade-in">
+            Безграничный доступ к Интернету <span class="green">из любой точки мира</span>
+        </h2>
+
+        <p class="fade-in">
+            Компании все чаще применяют блокировку по геолокации, ограничивая доступ пользователей из
+            определенных стран или регионов к своему контенту. С <strong>GhostLink VPN</strong> вы сможете обойти эти
+            ограничения быстро, просто и абсолютно бесплатно. Наш алгоритм автоматически подбирает самый
+            эффективный сервер, чтобы вы могли мгновенно подключиться и начать работу. В пуле <strong>GhostLink
+                VPN</strong>
+            доступно более 25 000 серверов в 47 странах мира.
+        </p>
+
+        <button class="info-btn fade-in" id="servers-btn">ПОСМОТРЕТЬ СЕРВЕРЫ GHOSTLINK</button>
+    </section>
+
+    <!-- ======= Подвал ======= -->
+    <footer class="footer" id="footer">
+        <div class="footer-logo">GHOSTLINK VPN</div>
+        <div class="footer-text">© 2026 GhostLink. Все права защищены.</div>
+    </footer>
+
+    <!-- ======= Скрипт анимации при прокрутке ======= -->
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(13, 13, 13, 0.96)';
+            } else {
+                navbar.style.background = 'rgba(13, 13, 13, 0.85)';
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.navbar-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.navbar-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
