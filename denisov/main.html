@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3NDMESSAGE - Магазин проектов монтажа</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <style>
+    /* Общие стили */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: #ffffff;
+        color: #333333;
+        line-height: 1.6;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Шапка */
+    header {
+        background-color: #000000;
+        padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ffffff; /* Розовый */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    nav ul li {
+        margin-left: 25px;
+    }
+    
+    nav ul li a {
+        font-size: 16px;
+        color: #ffffff;
+        transition: color 0.3s;
+        font-weight: 500;
+    }
+    
+    nav ul li a:hover {
+        color: #ff69b4;
+    }
+    
+    .cart-icon {
+        position: relative;
+        font-size: 20px;
+        color: #ffffff;
+    }
+    
+    .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #ff69b4;
+        color: #000000;
+        font-size: 12px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    
+    /* Герой секция с изображением */
+    .hero {
+        background: 
+            linear-gradient(135deg, rgba(255, 105, 180, 0.7) 0%, rgba(255, 20, 147, 0.7) 100%),
+            url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 60px;
+        position: relative;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+    
+    .btn {
+        display: inline-block;
+        background-color: #000000;
+        color: #ffffff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: all 0.3s;
+        border: 2px solid #000000;
+    }
+    
+    .btn:hover {
+        background-color: transparent;
+        color: #000000;
+    }
+    
+    .btn-pink {
+        background-color: #ff69b4;
+        color: #000000;
+        border: 2px solid #ff69b4;
+    }
+    
+    .btn-pink:hover {
+        background-color: transparent;
+        color: #ff69b4;
+    }
+    
+    /* Сортировка по категориям */
+    .categories-filter {
+        padding: 20px 0;
+        background-color: #fff5f9;
+        margin-bottom: 40px;
+        border-radius: 15px;
+    }
+    
+    .filter-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .filter-btn {
+        background-color: #ffffff;
+        color: #333333;
+        border: 2px solid #ff69b4;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+        background-color: #ff69b4;
+        color: #000000;
+    }
+    
+    /* Секция категорий */
+    .categories {
+        padding: 60px 0;
+        background-color: #fff5f9;
+        border-radius: 20px;
+        margin: 0 20px 60px;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 36px;
+        color: #ff69b4;
+        position: relative;
+    }
+    
+    .section-title:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #ff69b4;
+        margin: 10px auto;
+        border-radius: 2px;
+    }
+    
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .category-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+    }
+    
+    .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+    }
+    
+    .category-img {
+        height: 250px;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .category-info {
+        padding: 25px;
+        text-align: center;
+    }
+    
+    .category-info h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #333333;
+    }
+    
+    .category-info p {
+        color: #666666;
+        margin-bottom: 20px;
+    }
+    
+    /* Секция популярных товаров */
+    .featured-products {
+        padding: 60px 0;
+        margin-bottom: 60px;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .product-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f0f0f0;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+    }
+
+    .product-img {
+        height: 200px;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* ВСТАВЬ СЮДА СТИЛИ ДЛЯ КАРТИНОК */
+    .product-img {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .product-img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .product-info {
+        padding: 20px;
+    }
+    
+    .product-info h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333333;
+        height: 50px;
+        overflow: hidden;
+    }
+    
+    .product-category {
+        font-size: 14px;
+        color: #ff69b4;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .product-price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #ff69b4;
+        margin-bottom: 15px;
+    }
+    
+    .add-to-cart {
+        background-color: #ff69b4;
+        color: #000000;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    }
+    
+    .add-to-cart:hover {
+        background-color: #ff1493;
+    }
+    
+    /* Преимущества */
+    .features {
+        padding: 60px 0;
+        background-color: #fff5f9;
+        border-radius: 20px;
+        margin: 0 20px 60px;
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .feature {
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .feature i {
+        font-size: 40px;
+        color: #ff69b4;
+        margin-bottom: 20px;
+    }
+    
+    .feature h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #333333;
+    }
+    
+    .feature p {
+        color: #666666;
+    }
+    
+    /* Футер */
+    footer {
+        background-color: #000000;
+        padding: 50px 0 20px;
+        color: #ffffff;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #ff69b4;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+        transition: color 0.3s;
+    }
+    
+    .footer-column ul li a:hover {
+        color: #ff69b4;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #333333;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
+    
+    .social-links a:hover {
+        background-color: #ff69b4;
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333333;
+        font-size: 14px;
+        color: #888888;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 992px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+        }
+        
+        nav ul {
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 5px 10px;
+        }
+        
+        .categories-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+        }
+        
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .hero h1 {
+            font-size: 28px;
+        }
+        
+        .hero {
+            height: 400px;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="main.html" class="logo">S3NDMESSAGE</a>
+                <nav>
+                    <ul>
+                        <li><a href="main.html">Главная</a></li>
+                        <li><a href="categories.html">Категории</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li>
+                            <a href="cart.html" class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ПРОЕКТЫ МОНТАЖА ПРЕМИУМ-КЛАССА</h1>
+                <p>Откройте для себя уникальные проекты монтажа для вашего творчества. Каждый файл создан мною с любовью к деталям.</p>
+                <a href="#products" class="btn">Смотреть товары</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильтр по категориям -->
+    <section class="categories-filter">
+        <div class="container">
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="all">Все товары</button>
+                <button class="filter-btn" data-category="s3-production">S3 Production PF's</button>
+                <button class="filter-btn" data-category="packs-sfx">Packs and SFX's</button>
+                <button class="filter-btn" data-category="my-works">My works</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция популярных товаров -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <h2 class="section-title" id="products-title">Все товары</h2>
+            <div class="products-grid">
+                <!-- Товар 1 - S3 Production PF's -->
+                <div class="product-card" data-category="s3-production">
+                    <a href="1.html" class="product-img">
+                        <img src="images/product1.jpg" alt="S3NDMESSAGE PAINKILL PF">
+                    </a>
+                    <div class="product-info">
+                        <h3>S3NDMESSAGE PAINKILL PF</h3>
+                        <div class="product-category">S3 Production PF's</div>
+                        <div class="product-price">$20</div>
+                        <button class="add-to-cart" data-id="1" data-name="S3NDMESSAGE PAINKILL PF" data-price="20" data-category="S3 Production PF's">Добавить в корзину</button>
+                    </div>
+                </div>
+                <!-- Товар 2 - My works -->
+                <div class="product-card" data-category="my-works">
+                    <a href="2.html" class="product-img">
+                        <img src="images/product2.jpg" alt="S3NDMESAGE TG FROM EX">
+                    </a>
+                    <div class="product-info">
+                        <h3>S3NDMESAGE TG FROM EX</h3>
+                        <div class="product-category">My works</div>
+                        <div class="product-price">$25</div>
+                        <button class="add-to-cart" data-id="2" data-name="S3NDMESAGE TG FROM EX" data-price="25" data-category="My works">Добавить в корзину</button>
+                    </div>
+                </div>
+                
+                            <!-- Товар 3 - My works -->
+                <div class="product-card" data-category="my-works">
+                    <a href="3.html" class="product-img">
+                        <img src="images/product3.jpg" alt="S3NDMESSAGE YESCHAPSKII DEATHMERRIED EDIT">
+                    </a>
+                    <div class="product-info">
+                        <h3>S3NDMESSAGE YESCHAPSKII DEATHMERRIED EDIT</h3>
+                        <div class="product-category">My works</div>
+                        <div class="product-price">$15</div>
+                        <button class="add-to-cart" data-id="3" data-name="S3NDMESSAGE YESCHAPSKII DEATHMERRIED EDIT" data-price="15" data-category="My works">Добавить в корзину</button>
+                    </div>
+                </div>
+
+                <!-- Товар 4 - My works -->
+                <div class="product-card" data-category="my-works">
+                    <a href="4.html" class="product-img">
+                        <img src="images/product4.jpg" alt="S3NDMESSAGE PARISLOVE CHRISTINA BROKEN HEART">
+                    </a>
+                    <div class="product-info">
+                        <h3>S3NDMESSAGE PARISLOVE CHRISTINA BROKEN HEART</h3>
+                        <div class="product-category">My works</div>
+                        <div class="product-price">$30</div>
+                        <button class="add-to-cart" data-id="4" data-name="S3NDMESSAGE PARISLOVE CHRISTINA BROKEN HEART" data-price="30" data-category="My works">Добавить в корзину</button>
+                    </div>
+                </div>
+
+                <!-- Товар 5 - My works -->
+                <div class="product-card" data-category="my-works">
+                    <a href="5.html" class="product-img">
+                        <img src="images/product5.jpg" alt="S3NDMESSAGE ELYAAPLUG EDIT">
+                    </a>
+                    <div class="product-info">
+                        <h3>S3NDMESSAGE ELYAAPLUG EDIT</h3>
+                        <div class="product-category">My works</div>
+                        <div class="product-price">$10</div>
+                        <button class="add-to-cart" data-id="5" data-name="S3NDMESSAGE ELYAAPLUG EDIT" data-price="10" data-category="My works">Добавить в корзину</button>
+                    </div>
+                </div>
+
+                <!-- Товар 6 - Packs and SFX's -->
+                <div class="product-card" data-category="packs-sfx">
+                    <a href="6.html" class="product-img">
+                        <img src="images/product6.jpg" alt="XRRONA OSAMASON PF AND SFX PACK">
+                    </a>
+                    <div class="product-info">
+                        <h3>XRRONA OSAMASON PF AND SFX PACK</h3>
+                        <div class="product-category">Packs and SFX's</div>
+                        <div class="product-price">$30</div>
+                        <button class="add-to-cart" data-id="6" data-name="XRRONA OSAMASON PF AND SFX PACK" data-price="30" data-category="Packs and SFX's">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают меня</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Высокое качество</h3>
+                    <p>Все проекты созданы профессионалами с многолетним опытом</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-download"></i>
+                    <h3>Мгновенная доставка</h3>
+                    <p>Скачивайте файлы сразу после оплаты</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Наша команда всегда говатова помочь с любыми вопросами</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Магазин</h3>
+                    <ul>
+                        <li><a href="main.html">Главная</a></li>
+                        <li><a href="categories.html">Категории</a></li>
+                        <li><a href="products.html">Все товары</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Политика возврата</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Аккаунт</h3>
+                    <ul>
+                        <li><a href="#">Войти</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="#">Мои заказы</a></li>
+                        <li><a href="#">Избранное</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Email: info@s3ndmessage.com</li>
+                        <li>Телефон: +1 234 567 890</li>
+                        <li>Адрес: г. Москва, ул. Примерная, д. 123</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 S3NDMESSAGE. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функции для работы с корзиной
+        function getCart() {
+            return JSON.parse(localStorage.getItem('s3ndmessage_cart')) || [];
+        }
+        
+        function saveCart(cart) {
+            localStorage.setItem('s3ndmessage_cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+        
+        function addToCart(product) {
+            const cart = getCart();
+            const existingItem = cart.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    category: product.category,
+                    quantity: 1
+                });
+            }
+            
+            saveCart(cart);
+            showAddToCartMessage(product.name);
+        }
+        
+        function updateCartCount() {
+            const cart = getCart();
+            let totalCount = 0;
+            
+            cart.forEach(item => {
+                totalCount += item.quantity;
+            });
+            
+            document.querySelector('.cart-count').textContent = totalCount;
+        }
+        
+        function showAddToCartMessage(productName) {
+            // Создаем временное сообщение о добавлении в корзину
+            const message = document.createElement('div');
+            message.textContent = `${productName} добавлен в корзину!`;
+            message.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: #ff69b4;
+                color: #000;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 1000;
+                font-weight: bold;
+                animation: fadeInOut 3s ease-in-out;
+            `;
+            
+            document.body.appendChild(message);
+            
+            // Удаляем сообщение через 3 секунды
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        }
+        
+        // Фильтрация товаров по категориям
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            const productsTitle = document.getElementById('products-title');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            
+            // Объект с названиями категорий
+            const categoryTitles = {
+                'all': 'Все товары',
+                's3-production': 'S3 Production PF\'s',
+                'packs-sfx': 'Packs and SFX\'s',
+                'my-works': 'My works'
+            };
+            
+            // Инициализация счетчика корзины
+            updateCartCount();
+            
+            // Обработчики для кнопок добавления в корзину
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = {
+                        id: this.getAttribute('data-id'),
+                        name: this.getAttribute('data-name'),
+                        price: parseFloat(this.getAttribute('data-price')),
+                        category: this.getAttribute('data-category')
+                    };
+                    
+                    addToCart(product);
+                });
+            });
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Убираем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Обновляем заголовок в зависимости от выбранной категории
+                    productsTitle.textContent = categoryTitles[category];
+                    
+                    // Показываем/скрываем товары в зависимости от категории
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+        
+        // CSS анимация для сообщения
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateY(-20px); }
+                20% { opacity: 1; transform: translateY(0); }
+                80% { opacity: 1; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
