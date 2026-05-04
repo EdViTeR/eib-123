@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>БойчикStudio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #070708; color: #eaeaea; overflow-x: hidden; }
+
+    header {
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav ul { display: flex; list-style: none; gap: 25px; }
+
+    nav a { color: #aaa; text-decoration: none; position: relative; transition: 0.3s; }
+    nav a:hover { color: #fff; }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9');
+      background-size: cover;
+      text-align: center;
+      padding: 140px 20px;
+    }
+
+    .hero h1 { font-size: 44px; margin-bottom: 20px; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-3px);
+    }
+
+    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+    h2 { margin-bottom: 30px; }
+
+    .services, .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card, .price-card {
+      background: #111;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    .card:hover, .price-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+.portfolio {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.portfolio-card {
+  height: 320px;
+  width: 100%;
+  border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #222; /* запасной фон, если картинка не загрузится */
+}
+
+    .price { font-size: 28px; margin: 15px 0; }
+
+    .contact-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 60px;
+    }
+
+    form { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 500px; margin: 0 auto; }
+
+    input, textarea { padding: 12px; background: #111; border: 1px solid #333; color: #fff; }
+
+    .contact-info { min-width: 250px; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 30px; }
+
+    .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+
+    .contact-item img { width: 22px; height: 22px; }
+
+    footer { background: #050505; text-align: center; padding: 30px; margin-top: 40px; }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s;
+      }
+
+      nav ul.active { max-height: 300px; }
+      .menu-toggle { display: block; }
+
+      .contact-wrapper { flex-direction: column; }
+      .contact-info { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-left: 0; padding-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div><strong>БойчикStudio</strong></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#portfolio">Портфолио</a></li>
+      <li><a href="#pricing">Пакеты</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Промышленное 3D моделирование</h1>
+  <p>Делаю работы друзьям</p>
+  <a href="#contact" class="btn">Связаться</a>
+</section>
+
+<section id="about">
+  <h2>Обо мне</h2>
+  <p>Я студент 3 курса университета, учащийся на направлении бизнес-информатика. Уже более нескольких лет я работаю с коммерческими проектами, создавая 3D решения для промышленности и digital-сферы.</p>
+  <p>Опыт включает разработку моделей для производственных компаний и игровых студий, где важны точность, оптимизация и соответствие техническим требованиям.</p>
+  <p>Работаю с полным пайплайном: от концепта до финального рендера или подготовки под движок. Бисмиллях</p>
+</section>
+
+<section id="portfolio">
+  <h2>Портфолио</h2>
+  <div class="portfolio">
+    <div class="portfolio-card" style="background-image:url('https://st.render.ru/art/852016')"></div>
+    <div class="portfolio-card" style="background-image:url('https://st.render.ru/art/852025')"></div>
+    <div class="portfolio-card" style="background-image:url('https://st.render.ru/art/852010')"></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>Пакеты услуг</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Basic</h3>
+      <div class="price">$100</div>
+      <p>Простая модель без сложной детализации, 1 правка, базовый экспорт.</p>
+      <a href="#contact" class="btn">Заказать</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Standard</h3>
+      <div class="price">$300</div>
+      <p>Детализированная модель, текстуры, оптимизация под задачу, до 3 правок.</p>
+      <a href="#contact" class="btn">Заказать</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Premium</h3>
+      <div class="price">$700</div>
+      <p>Полный цикл: high-poly + low-poly, текстуры, рендер, приоритетная работа.</p>
+      <a href="#contact" class="btn">Заказать</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Связаться</h2>
+  <div class="contact-wrapper">
+
+    <form>
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="5" placeholder="Опишите задачу"></textarea>
+      <button class="btn" type="submit">Отправить</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"> posedon112@gmail.com</div>
+      <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png"> +7 977 855 9048</div>
+      <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> @posedon112</div>
+      <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> +7 977 855 9048</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© Бойчик3DMegaUltraProStudio</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.parallax-card').forEach(el => {
+      let offset = window.pageYOffset;
+      el.style.backgroundPositionY = offset * 0.3 + 'px';
+    });
+  });
+</script>
+
+</body>
+</html>
