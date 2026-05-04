@@ -9,8 +9,6 @@ body {
     font-family: 'Manrope', Arial, sans-serif;
     background-color: #F9F2EC;
     color: #3D3545;
-    max-width: 480px;
-    margin: 0 auto;
     overflow-x: hidden;
 }
 
@@ -23,13 +21,19 @@ a, button, .btn-catalog, .subscribe-form button {
     text-decoration: none !important;
 }
 
+/* ===== АДАПТИВНЫЙ КОНТЕЙНЕР ===== */
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 /* MOBILE MENU */
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: -100%;
     width: 80%;
-    max-width: 280px;
+    max-width: 320px;
     height: 100%;
     background-color: #B6A2C4;
     z-index: 1000;
@@ -113,12 +117,14 @@ a, button, .btn-catalog, .subscribe-form button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
+    padding: 12px 24px;
     background: #F9F2EC;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .logo img {
-    height: 28px;
+    height: 32px;
     width: auto;
 }
 
@@ -133,9 +139,15 @@ a, button, .btn-catalog, .subscribe-form button {
     height: 22px;
     stroke: #3D3545;
     fill: none;
+    cursor: pointer;
+    transition: stroke 0.2s;
 }
 
-/* HERO */
+.right-icons svg:hover {
+    stroke: #62689E;
+}
+
+/* HERO - АДАПТИВ */
 .hero {
     background-image: url('https://static.tildacdn.info/tild3865-3262-4032-a439-633536666164/Frame_222.png');
     background-size: cover;
@@ -144,12 +156,27 @@ a, button, .btn-catalog, .subscribe-form button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 20px 60px 20px;
+    padding: 60px 40px;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        min-height: 600px;
+        padding: 80px 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        min-height: 700px;
+        padding: 100px 80px;
+    }
 }
 
 .hero-text {
     text-align: right;
-    padding-right: 12px;
+    max-width: 600px;
+    margin-left: auto;
 }
 
 .hero-text h1 {
@@ -159,7 +186,19 @@ a, button, .btn-catalog, .subscribe-form button {
     line-height: 1.1;
     color: #3D3545;
     text-align: right;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .hero-text h1 {
+        font-size: 72px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-text h1 {
+        font-size: 90px;
+    }
 }
 
 .hero-text h1 .italic-mineral {
@@ -170,26 +209,29 @@ a, button, .btn-catalog, .subscribe-form button {
 .btn-catalog {
     background-color: #62689E;
     border-radius: 10px;
-    padding: 12px 24px;
+    padding: 14px 32px;
     display: inline-block;
     color: #F9F2EC;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
     text-align: center;
-    float: right;
-    clear: both;
     cursor: pointer;
-    margin-top: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-catalog:hover {
+    background-color: #4f5580;
+    transform: scale(1.02);
 }
 
 /* MARQUEE */
 .marquee-banner {
     background-color: #F1BADA;
-    padding: 10px 0;
+    padding: 12px 0;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     color: #fff;
 }
@@ -201,7 +243,7 @@ a, button, .btn-catalog, .subscribe-form button {
 }
 
 .marquee-content span {
-    margin-right: 36px;
+    margin-right: 48px;
 }
 
 @keyframes marquee {
@@ -213,10 +255,23 @@ a, button, .btn-catalog, .subscribe-form button {
     }
 }
 
-/* CRYSTALS */
+/* CRYSTALS - АДАПТИВ */
 .crystals-block {
     background: #F9F2EC;
-    padding: 30px 16px 24px;
+    padding: 40px 24px;
+}
+
+@media (min-width: 768px) {
+    .crystals-block {
+        padding: 60px 48px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .crystals-block {
+        padding: 80px 60px;
+    }
 }
 
 .crystals-main-title {
@@ -228,16 +283,41 @@ a, button, .btn-catalog, .subscribe-form button {
     margin-bottom: 8px;
 }
 
+@media (min-width: 768px) {
+    .crystals-main-title {
+        font-size: 80px;
+    }
+}
+
 .collection-subtitle {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 400;
     color: #3D3545;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .collection-subtitle {
+        font-size: 36px;
+    }
 }
 
 .crystals-img {
-    margin: 15px 0 20px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+    .crystals-img {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .crystals-img {
+        max-width: 500px;
+    }
 }
 
 .crystals-img img {
@@ -247,50 +327,99 @@ a, button, .btn-catalog, .subscribe-form button {
 
 .crystals-quote {
     font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
     color: #3D3545;
     font-weight: 500;
-    margin-top: 8px;
+    max-width: 600px;
+    margin: 20px auto 0;
+    text-align: center;
 }
 
-/* SLIDER */
+@media (min-width: 768px) {
+    .crystals-quote {
+        font-size: 16px;
+        max-width: 700px;
+    }
+}
+
+/* SLIDER - АДАПТИВ */
+.section-title-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 20px 24px 8px;
+    background: #F9F2EC;
+    color: #3D3545;
+}
+
+@media (min-width: 768px) {
+    .section-title-new {
+        font-size: 36px;
+        text-align: center;
+        padding: 40px 24px 16px;
+    }
+}
+
 .slider-section {
     background: #F9F2EC;
-    padding: 10px 0 30px 16px;
+    padding: 10px 24px 40px 24px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     display: flex;
-    gap: 16px;
+    gap: 24px;
     scrollbar-width: thin;
 }
 
+@media (min-width: 768px) {
+    .slider-section {
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: 30px;
+    }
+}
+
 .slider-card {
-    flex: 0 0 82%;
+    flex: 0 0 280px;
     scroll-snap-align: start;
     background: transparent;
     border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+    .slider-card {
+        flex: 0 0 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider-card {
+        flex: 0 0 320px;
+    }
 }
 
 .slider-card img {
     width: 100%;
     border-radius: 20px;
     display: block;
+    transition: transform 0.2s;
 }
 
-.section-title-new {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 500;
-    padding: 0 16px 8px;
-    background: #F9F2EC;
-    color: #3D3545;
+.slider-card img:hover {
+    transform: scale(1.02);
 }
 
-/* ПРОЦЕСС ЗАКАЗА */
+/* ПРОЦЕСС ЗАКАЗА - АДАПТИВ */
 .process-section {
     background: #F9F2EC;
-    padding: 30px 16px 50px;
+    padding: 40px 24px 60px;
+}
+
+@media (min-width: 768px) {
+    .process-section {
+        padding: 60px 48px;
+    }
 }
 
 .process-title {
@@ -298,8 +427,15 @@ a, button, .btn-catalog, .subscribe-form button {
     font-size: 42px;
     font-weight: 500;
     color: #62689E;
-    margin-bottom: 28px;
+    margin-bottom: 40px;
     letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    .process-title {
+        font-size: 56px;
+        text-align: center;
+    }
 }
 
 .steps-list {
@@ -308,14 +444,33 @@ a, button, .btn-catalog, .subscribe-form button {
     gap: 24px;
 }
 
+@media (min-width: 768px) {
+    .steps-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .steps-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .step-card {
     background: rgba(165, 145, 186, 0.15);
     border-radius: 24px;
-    padding: 20px 18px;
+    padding: 24px 20px;
     display: flex;
     align-items: flex-start;
     gap: 18px;
-    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .step-card:nth-child(odd) {
@@ -327,8 +482,8 @@ a, button, .btn-catalog, .subscribe-form button {
 }
 
 .step-number-circle {
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
     background: #FFFFFF;
     border-radius: 50%;
     display: flex;
@@ -351,7 +506,7 @@ a, button, .btn-catalog, .subscribe-form button {
     font-size: 18px;
     font-weight: 700;
     color: #3D3545;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     line-height: 1.3;
 }
 
@@ -363,105 +518,187 @@ a, button, .btn-catalog, .subscribe-form button {
     line-height: 1.45;
 }
 
-/* ABOUT */
+/* ABOUT - АДАПТИВ */
 .about-block {
     background: #EDECEB;
     border-radius: 40px;
-    margin: 16px;
+    margin: 20px 24px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .about-block {
+        flex-direction: row;
+        margin: 40px 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-block {
+        margin: 60px 60px;
+    }
+}
+
+.about-img {
+    flex: 1;
 }
 
 .about-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-text {
-    padding: 24px 22px;
+    flex: 1;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .about-text {
+        padding: 40px 36px;
+    }
 }
 
 .about-text h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 500;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     color: #3D3545;
+}
+
+@media (min-width: 768px) {
+    .about-text h2 {
+        font-size: 48px;
+    }
 }
 
 .about-text p {
     font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.55;
     font-weight: 500;
     color: #3D3545;
 }
 
-.about-logo {
-    margin-top: 24px;
-    max-width: 140px;
+@media (min-width: 768px) {
+    .about-text p {
+        font-size: 16px;
+    }
 }
 
-/* FOOTER */
+.about-logo {
+    margin-top: 28px;
+    max-width: 160px;
+}
+
+/* FOOTER - АДАПТИВ */
 .footer {
     background-color: #C5C6C7;
-    padding: 30px 20px 40px;
-    margin-top: 20px;
+    padding: 40px 30px 50px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 50px 50px;
+    }
 }
 
 .footer-col {
     margin-bottom: 30px;
 }
 
+@media (min-width: 768px) {
+    .footer-col {
+        margin-bottom: 0;
+    }
+}
+
 .footer-col h4 {
     font-family: 'Manrope', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: #3D3545;
 }
 
 .footer-col a {
     font-family: 'Manrope', sans-serif;
     display: block;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     margin-bottom: 10px;
     color: #3D3545;
     text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: #62689E;
 }
 
 .subscribe-form input {
     width: 100%;
-    padding: 10px 14px;
+    padding: 12px 16px;
     border-radius: 10px;
     border: none;
     background: #fff;
-    margin-bottom: 10px;
-    font-size: 13px;
+    margin-bottom: 12px;
+    font-size: 14px;
     font-family: 'Manrope', sans-serif;
 }
 
 .subscribe-form button {
     background: #62689E;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 10px;
     color: white;
     font-weight: 600;
     width: 100%;
     font-family: 'Manrope', sans-serif;
     cursor: pointer;
-    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.subscribe-form button:hover {
+    background: #4f5580;
 }
 
 hr {
-    margin: 20px 0;
-    border-color: #aaa;
+    display: none;
+}
+
+@media (max-width: 767px) {
+    hr {
+        display: block;
+        margin: 20px 0;
+        border-color: #aaa;
+    }
 }
 
 .copyright {
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 30px;
     font-family: 'Manrope', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .copyright {
+        grid-column: 1 / -1;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid #aaa;
+    }
 }
