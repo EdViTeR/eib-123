@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#2E7D32"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PING PONG"
+        android:textSize="48sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginBottom="64dp"/>
+
+    <Button
+        android:id="@+id/startGameButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Начать игру"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
