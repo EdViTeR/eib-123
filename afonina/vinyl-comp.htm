@@ -1,0 +1,290 @@
+<!DOCTYPE html><html><body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vinyl journey · icons & price</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Notable&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles-desktop.css">
+</head>
+<body>
+    <div class="desktop-container">
+
+        <!-- HERO SECTION -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="vinyl-title">VINYL RECORDS</h1>
+                <p class="hero-text">
+                    Welcome aboard the Vinyl journey, where your music's transformation begins it's flight to greatness!
+                </p>
+                <button class="catalog-button">Catalog</button>
+            </div>
+        </header>
+
+        <!-- CATALOG SECTION -->
+        <section class="catalog-section">
+            <h2 class="section-title">VINYL <span>CATALOG</span></h2>
+
+            <!-- Genres + Search -->
+            <div class="genres-search">
+                <div class="genres-list">
+                    <span class="genre-pill">JAZZ</span>
+                    <span class="genre-pill">ROCK</span>
+                    <span class="genre-pill">ALTERNATIVE ROCK</span>
+                    <span class="genre-pill">INDIE</span>
+                    <span class="genre-pill">ELECTRONIC</span>
+                    <span class="genre-pill">HIP-HOP</span>
+                    <span class="genre-pill">FOLK</span>
+                    <span class="genre-pill">RAP</span>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <span>search</span>
+                </div>
+            </div>
+
+            <!-- Albums Grid -->
+            <div class="albums-grid">
+                <!-- Fleetwood Mac -->
+                <div class="album-card">
+                    <div class="record-cover cover-fleetwood"></div>
+                    <div class="album-info">
+                        <div class="artist-name">FLEETWOOD MAC</div>
+                        <div class="price">8990 ₽</div>
+                    </div>
+                    <div class="card-actions">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+
+                <!-- ABBA -->
+                <div class="album-card">
+                    <div class="record-cover cover-abba"></div>
+                    <div class="album-info">
+                        <div class="artist-name">ABBA</div>
+                        <div class="price">8990 ₽</div>
+                    </div>
+                    <div class="card-actions">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+
+                <!-- Abbey Road -->
+                <div class="album-card">
+                    <div class="record-cover cover-abbey"></div>
+                    <div class="album-info">
+                        <div class="artist-name">ABBEY ROAD</div>
+                        <div class="price">9990 ₽</div>
+                    </div>
+                    <div class="card-actions">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+</body>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Days One', sans-serif;
+    color: #D1C9C9;
+    line-height: 1.4;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    height: 100vh;
+    min-height: 700px;
+    background-image: url('https://kluch.media/upload/photo/2021/1112-Vinil/5.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.vinyl-title {
+    font-family: 'Notable', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-text {
+    font-size: 1.35rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+
+.catalog-button {
+    background-color: #A3413D;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 52px;
+    font-family: 'Notable', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #5e2a27;
+    border: 2px solid #c06964;
+    transition: all 0.2s;
+}
+
+.catalog-button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 5px 0 #5e2a27;
+}
+
+/* ==================== CATALOG ==================== */
+.catalog-section {
+    padding: 80px 5%;
+    background-color: #000;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Notable', sans-serif;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-title span {
+    color: #A3413D;
+}
+
+/* Genres */
+.genres-search {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.genres-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.genre-pill {
+    font-family: 'Notable', sans-serif;
+    background-color: #A3413D;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    border: 1px solid #c06964;
+    box-shadow: 0 4px 0 #5e2a27;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.genre-pill:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #5e2a27;
+}
+
+.search-box {
+    background-color: #262016;
+    padding: 14px 28px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #7a634b;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Albums Grid */
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.album-card {
+    background-color: #0c0c0c;
+    border: 3px solid #fff;
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 0 15px 0 #3a3a3a;
+    transition: transform 0.3s;
+}
+
+.album-card:hover {
+    transform: translateY(-15px);
+}
+
+.record-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    border: 3px solid #a5865b;
+    margin-bottom: 20px;
+}
+
+.cover-fleetwood { background-image: url('https://avatars.mds.yandex.net/get-mpic/18322766/2a0000019b267db650cb889dd1d9798260e9/orig'); }
+.cover-abba { background-image: url('https://media.cdn.kaufland.de/product-images/original/e8974989f4193ac474df1b4c3ba233e6.jpg'); }
+.cover-abbey { background-image: url('https://www.udiscovermusic.com/wp-content/uploads/2022/01/abbey-road.jpg'); }
+
+.album-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+</style>
+
+<script>
+
+</script></html>
