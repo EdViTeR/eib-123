@@ -1,0 +1,1299 @@
+/* Подключение шрифтов остается без изменений */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Общие контейнеры*/
+.main_section,
+.mini_container, 
+.banner,
+.main_section_footer {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+/*Плашка с акцией вверху экрана*/
+
+.top-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    padding: 15px;
+    background-color: #000;
+}
+
+.top-banner h3 {
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFF;
+    line-height: 21px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.top-banner a {
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFF;
+    border-bottom: 1px solid #fff;
+}
+
+/*Хэдер*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 38px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    gap: 20px;
+}
+
+.logo {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000;
+    line-height: 24px;
+    letter-spacing: 3%;
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header_links {  
+    display: flex;
+    gap: 48px;
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.header_links a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    line-height: 24px;
+}
+
+/*бокс со строкой поиска – красивый конечно, но пока не рабочий*/
+.search_box {
+    position: relative;
+    max-width: 243px;
+    width: 100%;
+}
+
+.search_box input {
+    width: 100%;
+    padding: 7px 40px 7px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.search_icon_css {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/*меню навигации*/
+
+.imgnav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.icons_group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/*Полоса горизонтальная*/
+.strip {
+    width: 100%;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.banner {
+    display: flex;
+    margin-bottom: 140px;
+}
+
+.banner_links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 40px 16px 0 0;
+    width: 217px;
+    gap: 16px;
+}
+
+.banner_links a {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000;
+}
+
+.woman {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.men {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Полоса вертикальная*/
+.mini_strip {
+    width: 1px;
+    height: 384px;
+    background: #E0E0E0;
+    margin-right: 45px;
+}
+
+/*Баннер с apple*/
+.moving_banner {
+    margin-top: 40px;
+    flex: 1;
+    min-height: 344px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.banner_text {
+    display: flex;
+    flex-direction: column;
+    padding: 58px 0 58px 64px;
+}
+
+.apple_company {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.apple_company h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FAFAFA;
+}
+
+.banner_text h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #FAFAFA;
+    margin-bottom: 22px;
+}
+
+.active_btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.active_btn a {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FAFAFA;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+}
+
+.banner_photo {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.banner_photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Секция товаров*/
+.main_section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.heading {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left_heading {
+    display: flex;
+    align-items: flex-end;
+    gap: 87px;
+    flex-wrap: wrap;
+}
+
+.sale {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mini_title {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #DB4444;
+}
+
+.title {
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #000;
+}
+
+.today {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rectangle {
+    width: 20px;
+    height: 40px;
+    background-color: #DB4444;
+    border-radius: 4px;
+}
+
+.timer {
+    display: flex;
+    align-items: flex-end;
+    gap: 17px;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000000; 
+}
+
+.value {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.separator {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.circle {
+    width: 4px;
+    height: 4px;
+    background-color: #E07575;
+    border-radius: 50%;
+}
+
+.arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #F5F5F5;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+}
+
+.cards::-webkit-scrollbar { display: none; }
+
+.card {
+    min-width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card_rectangle {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: #F5F5F5;
+}
+
+.top_card_rectangle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.badge_discount {
+    display: flex;
+    background-color: #DB4444;
+    color: #FAFAFA;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    height: 26px;
+}
+
+.actions {
+    display: flex;
+    width: 34px;
+    flex-direction: column;
+    margin: 12px 12px auto auto;
+    gap: 8px;
+}
+
+.btn_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+.main-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 190px;
+    max-height: 180px;
+}
+
+.discount {
+    display: flex;
+    gap: 12px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.description h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;
+}
+
+.discount {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+
+.discount h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #DB4444;
+}
+
+.old_price {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;    
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.stars_text {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 20px;
+    gap: 8px;
+}
+
+.stars_text h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #000000;    
+    opacity: 0.5;
+}
+
+/*Кнопки действия*/
+.action_btn {
+    display: flex;
+    margin: 0 auto 60px auto;
+    padding: 16px 48px;
+    background-color: #DB4444;
+    border: none;
+    border-radius: 4px;
+    color: #FAFAFA;
+    font-weight: 500;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px; 
+}
+
+.action_btn_mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 56px;
+    background-color: #DB4444;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FAFAFA;
+    border: none;
+    outline: none;
+}
+
+.strip_standart {
+    display: flex;
+    height: 1px;
+    background: #e0e0e0;
+    margin-bottom: 80px;
+}
+
+.strip_standart2 {
+    display: flex;
+    height: 1px;
+    background: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+/*Категории*/
+.mini_cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 92px;
+}
+
+.mini_cards1,
+.mini_cards2 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.mini_card {
+    width: 170px;
+    height: 145px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    transition: 0.3s;
+}
+
+.mini_card h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;    
+}
+
+.mini_card:hover {
+    background-color: #DB4444;
+    color: #fff;
+    border-color: #DB4444;
+}
+
+/*Баннер с рекламой*/
+.big_banner {
+    width: 100%;
+    display: flex;
+    background-color: #000;
+    margin-top: 100px;
+    margin-bottom: 160px;
+    padding: 40px 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left_big_banner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.left_top_big_banner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.left_top_big_banner h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #00FF66; 
+}
+
+.left_top_big_banner h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 4px;
+    color: #FAFAFA; 
+}
+
+.date {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.hours {
+    display: flex;
+    width: 62px;
+    height: 62px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+.value_big {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #000000; 
+}
+
+.label_big {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #000000; 
+}
+
+.btn_big_banner {
+    display: flex;
+    max-width: 172px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 48px;
+    background: #00FF66;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FAFAFA;
+    outline: none;
+}
+
+.right_big_banner {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_big_banner img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.jbl {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.big_circle {
+    display: flex;
+    position: absolute;
+    max-width: 504px;
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    z-index: 1;
+    background-color: #D9D9D9;
+    opacity: 30%;
+    filter: blur(100px);    
+}
+
+/*Здесь последняя секция перед подвалом*/
+
+.last_section {
+    display: flex;
+    width: 100%;
+    max-width: 944px;
+    justify-content: center;
+    align-items: center;
+    gap: 88px;
+    margin: 0 auto 140px auto;
+}
+
+.last {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.up_icon {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.last_icon {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+.down_circle {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.down_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.down_text h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #000000; 
+}
+
+.down_text h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #000000; 
+}
+
+.mobile-break {
+    display: none;
+}
+
+.mobile-break2 {
+    display: none;
+}
+
+
+/*Футер*/
+.footer {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #000000;
+    color: #FAFAFA;
+    justify-content: center;
+}
+
+.main_section_footer {
+    flex-direction: row;
+    gap: 87px;
+}
+
+.block_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 210px;
+    margin-top: 80px;
+}
+
+.footer h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 3%;
+    color: #FAFAFA; 
+}
+
+.footer h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #FAFAFA;     
+}
+
+.mini_footer_ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 16px;
+}
+
+.mini_footer_ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    line-height: 24px;
+    color: #FAFAFA;
+}
+
+.up_email-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/*мучительное окно ввода для е-мейл*/
+.email-box {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #FAFAFA;
+    border-radius: 4px;
+    padding: 12px 16px;
+    width: 186px;
+}
+
+.email-input {
+    background: transparent;
+    border: none;
+    color: #FAFAFA;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    flex-grow: 1;
+    width: 0;
+}
+
+.email-input::placeholder {
+    color: #FAFAFA;
+    opacity: 30%;
+}
+
+.send-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+/*мучительное окно ввода для е-мейл закончилось*/
+
+.text_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.text_footer h3 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    line-height: 24px;
+    color: #FAFAFA; 
+}
+
+.qr {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.qr h3 {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 18px;
+    color: #FAFAFA; 
+    opacity: 70%;
+}
+
+.qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.getit {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+/*МЕДИАЗАПРОСЫ*/
+
+/*до 1100px: планшеты и т.д. (ориентировалась на ipad air)*/
+@media (max-width: 1100px) {
+
+    .top-banner h3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .imgnav {
+        margin-left: auto; 
+    }
+
+    .banner {
+        flex-direction: column;
+    }
+
+    .mini_strip {
+        display: none;
+    }
+
+    .banner_links {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        margin-right: 0;
+        padding-bottom: 20px;
+        gap: 28px;
+    }
+
+    .banner_links li {
+        white-space: nowrap;
+    }
+
+    .mini_cards {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .mini_cards1,
+    .mini_cards2 {
+        justify-content: center;
+    }
+
+    .mini_card {
+        max-width: 170px;
+        width: 100%;
+    }
+
+    .main_section_footer {
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        margin-bottom: 32px;
+        gap: 72px;
+    }
+
+    .last_section {
+        gap: 48px;
+    }
+
+    .last {
+        max-width: 180px;
+    }
+
+    .mobile-break {
+        display: block;
+    }
+
+    .block_footer {
+        margin-top: 0;
+        max-width: 210px;
+    }
+}
+
+
+
+/*до 480px (Iphone 14 pro max*/
+@media (max-width: 480px) {
+
+    .top-banner {
+        justify-content: space-between;
+    }
+
+    .top-banner h3 {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .top-banner a {
+        border-bottom: none;
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .header_links,
+    .imgnav {
+        justify-content: space-between;
+    }
+
+    .imgnav {
+        margin-left: 0;
+    }
+
+    .mobile-break {
+        display: none;
+    }
+
+    .mobile-break2 {
+        display: block;
+    }
+
+    .banner {
+        margin-bottom: 60px;
+    }
+
+    .moving_banner {
+        flex-direction: column;
+        min-height: auto;
+        padding-bottom: 40px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .banner_text {
+        padding: 40px 24px 20px 24px;
+        align-items: center;
+    }
+
+    .apple_company {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .banner_text h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .banner_photo {
+        padding-right: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .banner_photo img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .strip_standart {
+        margin-bottom: 40px;
+    }
+
+    /*здесь миникарточки категории*/
+    .mini_cards {
+        margin-bottom: 60px;
+        gap: 4px;
+    }
+
+    .mini_cards1 {
+        gap: 4px;
+    }
+
+    .mini_cards2 {
+        gap: 4px;
+    }
+
+    .mini_card {
+        width: 100%;
+    }
+
+/*блок с карточками товаров*/
+    .main_section {
+        margin-bottom: 32px;
+    }
+
+    .arrows {
+        display: none;
+    }
+
+    .left_heading {
+        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .timer {
+        gap: 12px;
+    }
+
+    .value {
+        font-size: 24px;
+    }
+
+    .label {
+        font-size: 10px;
+    }
+
+    .separator {
+        margin-bottom: 6px;
+        gap: 4px;
+    }
+
+    .cards {
+        gap: 16px;
+    }
+
+    .card {
+        min-width: 260px;
+    }
+
+    .card_rectangle {
+        height: 220px;
+    }
+
+    .main-img {
+        max-width: 150px;
+    }
+
+    .action_btn {
+        margin-bottom: 40px;
+    }
+
+    /*Баннер с колонкой*/
+    .big_banner {
+        flex-direction: column-reverse;
+        padding: 40px 24px;
+        margin-top: 28px;
+        margin-bottom: 40px;
+        text-align: center;
+        gap: 40px;
+    }
+
+
+    .right_big_banner {
+        width: 100%;
+    }
+
+    .jbl {
+        width: 100%;
+        height: auto;
+    }
+
+    .big_circle {
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+
+    .left_big_banner {
+        align-items: center;
+        gap: 32px;
+    }
+
+    .left_top_big_banner {
+        gap: 16px;
+    }
+
+    .left_top_big_banner h1 {
+        font-size: 32px;
+    }
+
+    .date {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hours {
+        width: 56px;
+        height: 56px;
+    }
+
+    .value_big {
+        font-size: 14px;
+    }
+
+    .label_big {
+        font-size: 9px;
+    }
+
+
+    .btn_big_banner {
+        max-width: 100%;
+        padding: 16px 0;
+    }
+
+    /*блок с преимуществами*/
+
+    .last {
+        width: 100%;
+    }
+
+    .down_text h3 {
+        font-size: 16px;
+    }
+
+    .down_text h4 {
+        font-size: 10px;
+    }
+
+
+    .last_section {
+        flex-direction: column;
+    }
+
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .timer {
+        gap: 10px;
+    }
+    
+    .value {
+        font-size: 24px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .email-box {
+        width: 100%;
+    }
+    
+    .footer_icons {
+        justify-content: center;
+    }
+}
